@@ -1,10 +1,15 @@
 import {
   LayoutDashboard,
   Users,
-  TrendingUp,
-  ShieldCheck,
-  FolderTree,
   Settings,
+  FileText,
+  Package,
+  Route,
+  Tag,
+  UserCog,
+  Warehouse,
+  Megaphone,
+  ShoppingCart,
 } from "lucide-react";
 
 export const menuItems = [
@@ -34,80 +39,104 @@ export const menuItems = [
   {
     title: "Orders Management",
     href: "/orders",
-    icon: TrendingUp,
+    icon: ShoppingCart,
   },
   {
     title: "Inventory",
     href: "/inventory",
-    icon: ShieldCheck,
+    icon: Package,
   },
   {
     title: "Invoice",
     href: "/invoices",
-    icon: ShieldCheck,
+    icon: FileText,
   },
   {
     title: "Installer Routing",
     href: "/installer-routing",
-    icon: ShieldCheck,
+    icon: Route,
   },
   {
     title: "Items & Pricing",
-    icon: Settings,
+    icon: Tag,
     submenu: [
       {
-        title: "Privacy-Policy",
-        href: "/settings/privacy-policy",
+        title: "Item",
+        href: "/item",
       },
       {
-        title: "About-Us",
-        href: "/settings/about-us",
+        title: "Material",
+        href: "/material",
+      },
+      {
+        title: "Option",
+        href: "/option",
+      },
+      {
+        title: "Services",
+        href: "/services",
+      },
+      {
+        title: "Installer Charge",
+        href: "/installer-charge",
+      },
+      {
+        title: "Trip Charge",
+        href: "/trip-charge",
+      },
+      {
+        title: "Size",
+        href: "/size",
       },
     ],
   },
   {
     title: "Manage Warehouse",
     href: "/warehouse",
-    icon: FolderTree,
+    icon: Warehouse,
   },
   {
     title: "Make Admin",
     href: "/admins",
-    icon: FolderTree,
+    icon: UserCog,
   },
   {
     title: "Announcement",
     href: "/announcements",
-    icon: FolderTree,
+    icon: Megaphone,
   },
   {
     title: "Settings",
     icon: Settings,
     submenu: [
-      // {
-      //   title: "Profile",
-      //   href: "/settings/profile",
-      // },
       {
-        title: "Change Password",
-        href: "/settings/change-password",
+        title: "About Us",
+        href: "/settings/about-us",
       },
+      // {
+      //   title: "Change Password",
+      //   href: "/settings/change-password",
+      // },
       {
         title: "Privacy-Policy",
         href: "/settings/privacy-policy",
       },
       {
-        title: "About-Us",
-        href: "/settings/about-us",
-      },
-      {
         title: "Terms & Condition",
         href: "/settings/terms-condition",
       },
-      // {
-      //   title: 'Faqs',
-      //   href: '/settings/faqs',
-      // },
+      {
+        title: "Contact Us",
+        href: "/settings/contact-us",
+      },
+      {
+        title: "FAQs",
+        href: "/settings/faqs",
+      },
+      {
+        title: "Academy",
+        href: "/settings/academy",
+      },
     ],
   },
 ];
