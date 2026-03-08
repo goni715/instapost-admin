@@ -1,15 +1,17 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { ArrowLeft, Eye, EyeOff } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 
 export default function SignInPage() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
   return (
     <div className="min-h-screen flex">
@@ -17,7 +19,7 @@ export default function SignInPage() {
       <div
         className="hidden lg:flex lg:w-1/2 bg-cover bg-center relative"
         style={{
-          backgroundImage: 'url(/auth_bg.png)',
+          backgroundImage: "url(/auth_bg.png)",
         }}
       >
         <div className="absolute inset-0 bg-black/20" />
@@ -44,17 +46,24 @@ export default function SignInPage() {
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl font-bold text-foreground mb-2">Sign in to your account</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-2">
+            Sign in to your account
+          </h2>
           <p className="text-foreground/60 mb-8">
-            Don&apos;t have an account?{' '}
-            <Link href="/auth/sign-up" className="text-primary hover:underline font-medium">
+            Don&apos;t have an account?{" "}
+            <Link
+              href="/auth/sign-up"
+              className="text-primary hover:underline font-medium"
+            >
               Join here
             </Link>
           </p>
 
           {/* Email Input */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-foreground mb-2">Email</label>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Email
+            </label>
             <Input
               type="email"
               placeholder="asadujjaman@gmail.com"
@@ -66,10 +75,12 @@ export default function SignInPage() {
 
           {/* Password Input */}
           <div className="mb-2">
-            <label className="block text-sm font-medium text-foreground mb-2">Password</label>
+            <label className="block text-sm font-medium text-foreground mb-2">
+              Password
+            </label>
             <div className="relative">
               <Input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -80,34 +91,44 @@ export default function SignInPage() {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors"
               >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showPassword ? (
+                  <EyeOff className="w-5 h-5" />
+                ) : (
+                  <Eye className="w-5 h-5" />
+                )}
               </button>
             </div>
           </div>
 
           {/* Forgot Password Link */}
           <div className="mb-6 text-right">
-            <Link href="/auth/forgot-password" className="text-sm text-foreground/60 hover:text-foreground">
+            <Link
+              href="/auth/forgot-password"
+              className="text-sm text-foreground/60 hover:text-foreground"
+            >
               Forgot Password?
             </Link>
           </div>
 
           {/* Sign In Button */}
-          <Button className="w-full h-11 text-base bg-primary hover:bg-primary/90 text-white mb-6">
+          <Button
+            onClick={() => router.push("/")}
+            className="w-full h-11 text-base bg-primary hover:bg-primary/90 text-white mb-6"
+          >
             Sign In
           </Button>
 
           {/* Terms */}
           <p className="text-xs text-foreground/60 text-center">
-            By joining, you agree to the{' '}
+            By joining, you agree to the{" "}
             <Link href="#" className="text-primary hover:underline">
               Terms of Service
-            </Link>
-            {' '}and Please read our{' '}
+            </Link>{" "}
+            and Please read our{" "}
             <Link href="#" className="text-primary hover:underline">
               Privacy Policy
-            </Link>
-            {' '}to learn how we use your personal data.
+            </Link>{" "}
+            to learn how we use your personal data.
           </p>
         </div>
       </div>
@@ -116,9 +137,9 @@ export default function SignInPage() {
       <div
         className="lg:hidden absolute inset-0 -z-10 bg-cover bg-center opacity-30"
         style={{
-          backgroundImage: 'url(/auth-bg.jpg)',
+          backgroundImage: "url(/auth-bg.jpg)",
         }}
       />
     </div>
-  )
+  );
 }

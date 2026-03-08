@@ -73,7 +73,7 @@ const Header = ({ onMenuClick }: TProps) => {
                 <DropdownMenuSeparator />
               </> */}
             {/* )} */}
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem className="cursor-pointer" onClick={()=> router.push(`/auth/sign-in`)}>
               <LogOut className="mr-2 h-4 w-4" />
               <span>Log out</span>
             </DropdownMenuItem>

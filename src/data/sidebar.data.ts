@@ -3,26 +3,43 @@ import {
   Users,
   TrendingUp,
   ShieldCheck,
-  Crown,
   FolderTree,
   Settings,
 } from "lucide-react";
 
 export const menuItems = [
   {
-    title: "Home",
+    title: "Dashboard",
     href: "/",
     icon: LayoutDashboard,
   },
   {
-    title: "Orders",
-    href: "/orders",
+    title: "Users Management",
     icon: Users,
+    submenu: [
+      {
+        title: "All User",
+        href: "/users",
+      },
+      {
+        title: "Approval",
+        href: "/approvals",
+      },
+      {
+        title: "Subscriber Management",
+        href: "/subscribers",
+      },
+    ],
+  },
+  {
+    title: "Orders Management",
+    href: "/orders",
+    icon: TrendingUp,
   },
   {
     title: "Inventory",
     href: "/inventory",
-    icon: TrendingUp,
+    icon: ShieldCheck,
   },
   {
     title: "Invoice",
@@ -30,18 +47,41 @@ export const menuItems = [
     icon: ShieldCheck,
   },
   {
-    title: "Assistant",
-    href: "/assistant",
-    icon: Crown,
+    title: "Installer Routing",
+    href: "/installer-routing",
+    icon: ShieldCheck,
   },
   {
-    title: "Academy",
-    href: "/academy",
+    title: "Items & Pricing",
+    icon: Settings,
+    submenu: [
+      {
+        title: "Privacy-Policy",
+        href: "/settings/privacy-policy",
+      },
+      {
+        title: "About-Us",
+        href: "/settings/about-us",
+      },
+    ],
+  },
+  {
+    title: "Manage Warehouse",
+    href: "/warehouse",
+    icon: FolderTree,
+  },
+  {
+    title: "Make Admin",
+    href: "/admins",
+    icon: FolderTree,
+  },
+  {
+    title: "Announcement",
+    href: "/announcements",
     icon: FolderTree,
   },
   {
     title: "Settings",
-    href: "/settings",
     icon: Settings,
     submenu: [
       // {
