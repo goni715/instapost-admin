@@ -7,19 +7,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import UserTable from "./UserTable";
 import ListHeader from "../common/ListHeader";
 import useDebounce from "@/hooks/useDebounce";
 import ListLoading from "../loader/ListLoading";
 import TableOverlayLoading from "../loader/TableOverlayLoading";
 import { ADMIN_META_DATA, DUMMY_ADMINS } from "@/data/admin.data";
+import CreateAdminModal from "../modal/admin/CreateAdminModal";
+import AdminTable from "./AdminTable";
 
-const UserList = () => {
+const AdminList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [status, setStatus] = useState("");
   const [pageSize, setPageSize] = useState(10);
-  const {  } = useDebounce({ searchQuery, setCurrentPage }); //debounce handled
+  const {} = useDebounce({ searchQuery, setCurrentPage }); //debounce handled
   // const { data, isLoading, isFetching, isError, refetch } = useGetAdminsQuery([
   //   { name: "page", value: currentPage },
   //   { name: "limit", value: pageSize },
@@ -46,7 +47,7 @@ const UserList = () => {
 
   if (!isLoading && !isError) {
     content = (
-      <UserTable
+      <AdminTable
         admins={DUMMY_ADMINS}
         meta={ADMIN_META_DATA}
         currentPage={currentPage}
@@ -91,7 +92,7 @@ const UserList = () => {
           </>
         }
       >
-        {/* <CreateAdminModal /> */}
+        <CreateAdminModal />
       </ListHeader>
 
       {/* table part */}
@@ -103,4 +104,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default AdminList;

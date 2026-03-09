@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { ADMIN_PERMISSIONS } from "@/data/admin.data";
+import { Edit } from "lucide-react";
 
 interface AdminData {
   name: string;
@@ -17,18 +18,26 @@ interface AdminData {
   permissions: Record<string, boolean>;
 }
 
-const CreateAdminModal = () => {
+const EditAdminModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState<AdminData>({
     name: "",
     email: "",
     password: "",
     userType: "Admin",
-    permissions: Object.fromEntries(
-      ADMIN_PERMISSIONS.map((perm) => [perm, false]),
-    ),
+    permissions: {
+      Financial: true,
+      "User Management": false,
+      "Order Management": true,
+      "Inventory Management": false,
+      Invoice: true,
+      "Installer Routing": false,
+      "Items & Pricing": true,
+      "Manage Warehouse": false,
+      Announcement: true,
+      Settings: false
+    },
   });
-
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({
@@ -67,12 +76,10 @@ const CreateAdminModal = () => {
 
   return (
     <>
-      <Button
+      <Edit
         onClick={() => setModalOpen(true)}
-        className="bg-primary w-full sm:w-auto hover:bg-primary/90 text-white cursor-pointer"
-      >
-        Add Admin
-      </Button>
+        className="h-6 w-4 text-green-600 hover:text-green-700 cursor-pointer"
+      />
 
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         {/* Modal Content */}
@@ -195,4 +202,4 @@ const CreateAdminModal = () => {
   );
 };
 
-export default CreateAdminModal;
+export default EditAdminModal;

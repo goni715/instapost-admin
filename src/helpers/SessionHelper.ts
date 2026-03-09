@@ -1,8 +1,3 @@
-import type { IAuthUser } from "@/types/auth.type";
-import type { TProfile } from "@/types/user.type";
-import { jwtDecode } from "jwt-decode";
-
-
 class SessionHelper {
   setToken(token: string) {
     localStorage.setItem("token", token);
@@ -30,30 +25,6 @@ class SessionHelper {
 
   getEmail() {
     return localStorage.getItem("email");
-  }
-
-  setUserDetails(details: TProfile) {
-    localStorage.setItem("userDetails", JSON.stringify(details));
-  }
-
-  getUserDetails(): TProfile | null{
-    if (typeof window !== "undefined" && window.localStorage) {
-      const data = localStorage.getItem("userDetails");
-      return data ? JSON.parse(data) : null;
-    }
-    return null
-  }
-
-  getUserInfo() {
-    const token = getToken();
-    if (token) {
-      const decodedData = jwtDecode(token) as IAuthUser;
-      return decodedData;
-    }
-    if (typeof window !== "undefined" && window.localStorage) {
-      window.localStorage.clear();
-      window.location.href = "/";
-    }
   }
 
   setOtpToken(otpToken: string) {
@@ -94,12 +65,21 @@ class SessionHelper {
     localStorage.clear();
     window.location.href = "/auth/signin";
   }
-
-
 }
 
-
-
-
-
-export const { setToken, getToken, setUserDetails, getUserDetails, getUserInfo, setEmail, getEmail, setVerifyEmail, getVerifyEmail, setOtp, getOtp, logout, isLoggedIn, setAuthId, getAuthId, setOtpToken, getOtpToken } = new SessionHelper();
+export const {
+  setToken,
+  getToken,
+  setEmail,
+  getEmail,
+  setVerifyEmail,
+  getVerifyEmail,
+  setOtp,
+  getOtp,
+  logout,
+  isLoggedIn,
+  setAuthId,
+  getAuthId,
+  setOtpToken,
+  getOtpToken,
+} = new SessionHelper();

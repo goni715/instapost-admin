@@ -1,5 +1,5 @@
 "use client";
-import UserList from "@/components/user/UserList";
+import UserList from "@/components/admin/AdminList";
 
 const UsersPage = () => {
   return (
