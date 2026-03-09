@@ -5,8 +5,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import CustomIconInput from "@/components/form/CustomIconInput";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks/hooks";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 
@@ -35,7 +33,6 @@ const PERMISSIONS = [
 
 const CreateAdminModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<AdminData>({
     name: "",
     email: "",
@@ -62,9 +59,6 @@ const CreateAdminModal = () => {
   };
 
   const handleAdd = () => {
-    if (onAdd) {
-      onAdd(formData);
-    }
     // Reset form
     setFormData({
       name: "",
