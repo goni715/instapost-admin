@@ -1,9 +1,10 @@
-import AdminList from "@/components/admin/AdminList";
+"use client";
+import UserList from "@/components/user/UserList";
 
 const UsersPage = () => {
   return (
     <div className="min-h-full bg-white rounded-md shadow-md p-4">
-      <AdminList />
+      <UserList />
     </div>
   );
 };

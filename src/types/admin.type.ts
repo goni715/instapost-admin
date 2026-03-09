@@ -1,20 +1,18 @@
+import { TBlockStatus } from "./user.type";
+
 export type AdminRole = "Support" | "Finance" | "Verifier";
 export type AdminStatus = "Active" | "Disabled" | "Inactive";
 
 export interface IAdmin {
-  fullName: ReactNode;
-  profileImg: any;
-  userId: any;
-  id: string;
-  name: string;
+  userId: string;
+  fullName: string;
   email: string;
-  role: AdminRole;
-  status: AdminStatus;
-  lastLogin: string;
-  avatar?: string;
-  joinedDate: string;
-  phone?: string;
+  phone: string;
+  profileImg: string;
+  status: TBlockStatus;
+  createdAt: string;
 }
+
 
 export interface AuditLog {
   id: string;

@@ -1,8 +1,4 @@
-import { lazy, Suspense, useState, type ReactNode } from "react";
-import ListLoading from "../loader/ListLoading";
-import TableOverlayLoading from "../loader/TableOverlayLoading";
-import useDebounce from "@/hooks/useDebounce";
-import ListHeader from "../common/ListHeader";
+import { useState, type ReactNode } from "react";
 import {
   Select,
   SelectContent,
@@ -11,37 +7,37 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import AuthenticationCard from "../card/AuthenticationCard";
-import { useGetAdminsQuery } from "@/redux/features/admin/adminApi";
-import CreateAdminModal from "../modal/admin/CreateAdminModal";
-const AdminTable = lazy(() => import("./AdminTable"));
+import UserTable from "./UserTable";
+import ListHeader from "../common/ListHeader";
+import useDebounce from "@/hooks/useDebounce";
+import ListLoading from "../loader/ListLoading";
+import TableOverlayLoading from "../loader/TableOverlayLoading";
+import { ADMIN_META_DATA, DUMMY_ADMINS } from "@/data/admin.data";
 
 const UserList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [status, setStatus] = useState("");
   const [pageSize, setPageSize] = useState(10);
-  const { searchTerm } = useDebounce({ searchQuery, setCurrentPage }); //debounce handled
-  const { data, isLoading, isFetching, isError, refetch, error } =
-    useGetAdminsQuery([
-      { name: "page", value: currentPage },
-      { name: "limit", value: pageSize },
-      { name: "searchTerm", value: searchTerm },
-      { name: "status", value: status === "all" ? "" : status },
-    ]);
+  const {  } = useDebounce({ searchQuery, setCurrentPage }); //debounce handled
+  // const { data, isLoading, isFetching, isError, refetch } = useGetAdminsQuery([
+  //   { name: "page", value: currentPage },
+  //   { name: "limit", value: pageSize },
+  //   { name: "searchTerm", value: searchTerm },
+  //   { name: "status", value: status === "all" ? "" : status },
+  // ]);
+  const isLoading = false;
+  const isFetching = false;
+  const isError = false;
 
-  const fetchError = error as FetchBaseQueryError;
-  const admins = data?.data || [];
-  const meta = data?.meta || {};
+  // const admins = data?.data || [];
+  // const meta = data?.meta || {};
+  const meta = ADMIN_META_DATA;
 
   let content: ReactNode;
 
   if (isLoading) {
     content = <ListLoading />;
-  }
-  if (!isLoading && isError && fetchError?.status === 401) {
-    content = <AuthenticationCard />;
   }
 
   if (!isLoading && isError) {
@@ -50,16 +46,14 @@ const UserList = () => {
 
   if (!isLoading && !isError) {
     content = (
-      <Suspense fallback={<ListLoading />}>
-        <AdminTable
-          admins={admins}
-          meta={meta}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          pageSize={pageSize}
-          setPageSize={setPageSize}
-        />
-      </Suspense>
+      <UserTable
+        admins={DUMMY_ADMINS}
+        meta={ADMIN_META_DATA}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        pageSize={pageSize}
+        setPageSize={setPageSize}
+      />
     );
   }
 
@@ -69,7 +63,7 @@ const UserList = () => {
       <ListHeader
         title="Admin List"
         total={meta?.total}
-        onRefresh={refetch}
+        // onRefresh={refetch}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         isLoading={isLoading}
@@ -97,7 +91,7 @@ const UserList = () => {
           </>
         }
       >
-        <CreateAdminModal />
+        {/* <CreateAdminModal /> */}
       </ListHeader>
 
       {/* table part */}

@@ -6,7 +6,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import CustomPagination from "../form/CustomPagination";
 import {
   Select,
   SelectContent,
@@ -15,12 +14,9 @@ import {
   SelectValue,
 } from "../ui/select";
 import type { IMeta } from "@/types/global.type";
-import ChangeStatusModal from "../modal/auth/ChangeStatusModal";
-import assets from "@/assets/assets";
 import type { IAdmin } from "@/types/admin.type";
-import UpdateAdminModal from "../modal/admin/UpdateAdminModal";
-import DeleteAdminModal from "../modal/admin/DeleteAdminModal";
 import Image from "next/image";
+import CustomPagination from "../ui/CustomPagination";
 
 type TProps = {
   admins: IAdmin[];
@@ -81,10 +77,11 @@ const UserTable = ({
                           src={"/profile_placeholder.png"}
                           alt="caandidate_img"
                           className="h-10 w-11.25 rounded"
+                          width={600}
+                          height={600}
                           onError={(e) => {
                             e.currentTarget.onerror = null;
-                            e.currentTarget.src =
-                              assets.profile_placeholder_img;
+                            e.currentTarget.src = "/profile_placeholder.png";
                           }}
                         />
                       </TableCell>
@@ -95,13 +92,13 @@ const UserTable = ({
                         {admin?.phone || "-"}
                       </TableCell>
                       <TableCell className="min-w-24">
-                        <ChangeStatusModal
+                        {/* <ChangeStatusModal
                           status={admin?.status}
                           userId={admin?.userId}
                           key={admin.userId}
-                        />
+                        /> */}
                       </TableCell>
-                      <TableCell className="min-w-24">
+                      {/* <TableCell className="min-w-24">
                         <div
                           className="flex items-center gap-2"
                           key={admin.userId}
@@ -109,7 +106,7 @@ const UserTable = ({
                           <UpdateAdminModal admin={admin} />
                           <DeleteAdminModal adminUserId={admin.userId} />
                         </div>
-                      </TableCell>
+                      </TableCell> */}
                     </TableRow>
                   ))
                 ) : (
