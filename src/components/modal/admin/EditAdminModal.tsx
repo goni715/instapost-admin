@@ -88,7 +88,7 @@ const EditAdminModal = () => {
           onInteractOutside={(e) => e.preventDefault()}
         >
           <DialogHeader>
-            <DialogTitle>Add Admin</DialogTitle>
+            <DialogTitle>Edit Admin</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             {/* Name Field */}
@@ -185,7 +185,7 @@ const EditAdminModal = () => {
             <Button
               variant="outline"
               onClick={handleClose}
-              className="flex-1 border-primary text-primary hover:bg-blue-50"
+              className="flex-1 border-primary text-primary hover:bg-blue-50 cursor-pointer"
             >
               Close
             </Button>
@@ -193,7 +193,7 @@ const EditAdminModal = () => {
               onClick={handleAdd}
               className="flex-1 bg-primary hover:bg-primary/90 text-white cursor-pointer"
             >
-              Add
+              Save changes
             </Button>
           </div>
         </DialogContent>

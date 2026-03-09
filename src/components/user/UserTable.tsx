@@ -21,6 +21,8 @@ import {
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
 import { IUser } from "@/types/user.type";
+import EditUserModal from "../modal/user/EditUserModal";
+import DeleteUserModal from "../modal/user/DeleteUserModal";
 
 type TProps = {
   users: IUser[];
@@ -109,18 +111,12 @@ const UserTable = ({
                     </TableCell>
 
                     <TableCell>
-                      <div className="flex gap-3">
-                        <button className="text-gray-500 hover:text-blue-600">
-                          👁
-                        </button>
-
-                        <button className="text-green-600 hover:text-green-700">
-                          ✏
-                        </button>
-
-                        <button className="text-red-500 hover:text-red-600">
-                          🗑
-                        </button>
+                      <div
+                        className="flex items-center gap-2"
+                        key={user.id}
+                      >
+                        <EditUserModal />
+                        <DeleteUserModal userId={user.id} />
                       </div>
                     </TableCell>
                   </TableRow>

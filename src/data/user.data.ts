@@ -165,11 +165,18 @@ export const DUMMY_USERS: IUser[] = [
   },
 ];
 
-
-
 export const USER_META_DATA = {
   page: 1,
   limit: 10,
   totalPages: 2,
   total: 20,
 };
+
+export const ROLE_OPTIONS = [
+  { label: "Agent", value: "Agent" },
+  { label: "Team Lead", value: "Team Lead" },
+  { label: "Assistant", value: "Assistant" },
+  { label: "Installer", value: "Installer" },
+  { label: "Warehouse manger", value: "Warehouse manger" },
+  { label: "Sign company", value: "Sign company" },
+];

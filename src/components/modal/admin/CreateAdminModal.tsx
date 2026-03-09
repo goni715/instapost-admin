@@ -94,7 +94,7 @@ const CreateAdminModal = () => {
                 placeholder="Type here..."
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                className="w-full"
+                className="w-full bg-gray-50"
               />
             </div>
 
@@ -108,7 +108,7 @@ const CreateAdminModal = () => {
                 placeholder="Type here..."
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                className="w-full"
+                className="w-full bg-gray-50"
               />
             </div>
 
@@ -122,13 +122,13 @@ const CreateAdminModal = () => {
                 placeholder="Type here..."
                 value={formData.password}
                 onChange={(e) => handleInputChange("password", e.target.value)}
-                className="w-full"
+                className="w-full bg-gray-50"
               />
             </div>
 
             {/* User Type Field */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium bg-gray-50 text-gray-700 mb-2">
                 User type
               </label>
               <Input
@@ -178,7 +178,7 @@ const CreateAdminModal = () => {
             <Button
               variant="outline"
               onClick={handleClose}
-              className="flex-1 border-primary text-primary hover:bg-blue-50"
+              className="flex-1 border-primary text-primary cursor-pointer hover:bg-blue-50"
             >
               Close
             </Button>
