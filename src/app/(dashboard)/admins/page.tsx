@@ -1,12 +1,13 @@
 "use client";
-import UserList from "@/components/admin/AdminList";
 
-const UsersPage = () => {
+import AdminList from "@/components/admin/AdminList";
+
+const AdminsPage = () => {
   return (
     <div className="min-h-full bg-white rounded-md shadow-md p-4">
-      <UserList />
+      <AdminList />
     </div>
   );
 };
 
-export default UsersPage;
+export default AdminsPage;

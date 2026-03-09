@@ -1,8 +1,13 @@
+"use client";
+
+import UserList from "@/components/user/UserList";
 
 const UsersPage = () => {
   return (
-    <div>UsersManagementPage</div>
-  )
-}
+    <div className="min-h-full bg-white rounded-md shadow-md p-4">
+      <UserList />
+    </div>
+  );
+};
 
-export default UsersPage
+export default UsersPage;

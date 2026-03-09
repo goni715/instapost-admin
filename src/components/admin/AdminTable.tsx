@@ -53,9 +53,6 @@ const AdminTable = ({
                 <TableHead className="min-w-48 bg-blue-50">Name</TableHead>
                 <TableHead className="min-w-32 bg-blue-50">Image</TableHead>
                 <TableHead className="min-w-48 bg-blue-50">Email</TableHead>
-                <TableHead className="min-w-32 hidden sm:table-cell bg-blue-50">
-                  Contact Number
-                </TableHead>
                 <TableHead className="min-w-24 bg-blue-50">Status</TableHead>
                 <TableHead className="min-w-24 bg-blue-50">Action</TableHead>
               </TableRow>
@@ -89,9 +86,6 @@ const AdminTable = ({
                     <TableCell className="min-w-32 text-muted-foreground truncate">
                       {admin?.email || "-"}
                     </TableCell>
-                    <TableCell className="min-w-32 text-muted-foreground hidden sm:table-cell truncate">
-                      {admin?.phone || "-"}
-                    </TableCell>
                     <TableCell className="min-w-24">
                       <ChangeStatusModal
                         status={admin?.status}
@@ -113,7 +107,7 @@ const AdminTable = ({
               ) : (
                 <TableRow>
                   <TableCell
-                    colSpan={7}
+                    colSpan={6}
                     className="text-center py-8 text-muted-foreground"
                   >
                     No admins found

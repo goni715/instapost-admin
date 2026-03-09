@@ -1,2 +1,11 @@
 export type TBlockStatus = "active" | "blocked";
 
+export interface IUser {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  phone: string;
+  joinDate: string;
+  image?: string;
+}
