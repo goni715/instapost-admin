@@ -2,6 +2,9 @@ export type AdminRole = "Support" | "Finance" | "Verifier";
 export type AdminStatus = "Active" | "Disabled" | "Inactive";
 
 export interface IAdmin {
+  fullName: ReactNode;
+  profileImg: any;
+  userId: any;
   id: string;
   name: string;
   email: string;

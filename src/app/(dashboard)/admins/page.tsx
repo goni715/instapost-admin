@@ -1,8 +1,11 @@
+import AdminList from "@/components/admin/AdminList";
 
-const AdminsPage = () => {
+const UsersPage = () => {
   return (
-    <div>AdminsPage</div>
-  )
-}
+    <div className="min-h-full bg-white rounded-md shadow-md p-4">
+      <AdminList />
+    </div>
+  );
+};
 
-export default AdminsPage
+export default UsersPage;
