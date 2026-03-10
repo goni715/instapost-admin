@@ -18,9 +18,11 @@ import {
 } from "../ui/select";
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
-import { IOrder } from "@/types/order.type";
+import { IOrder, TOrderStatus } from "@/types/order.type";
 import { Eye } from "lucide-react";
 import ChangeOrderStatusModal from "../modal/order/ChangeOrderStatusModal";
+import { SignInstallationModal } from "../modal/order/SignInstallationModal";
+import { useState } from "react";
 
 type TProps = {
   orders: IOrder[];
@@ -40,6 +42,9 @@ const OrderTable = ({
   setPageSize,
 }: TProps) => {
   const startIndex = (currentPage - 1) * pageSize;
+  const [signInstallationOpen, setSignInstallationOpen] = useState(false);
+  const [signInstallationStatus, setSignInstallationStatus] =
+    useState<TOrderStatus>("Scheduled");
 
   return (
     <>
@@ -109,6 +114,69 @@ const OrderTable = ({
                     <Eye
                       size={18}
                       className="cursor-pointer text-muted-foreground"
+                      onClick={() => {
+                        setSignInstallationStatus("Scheduled");
+                        setSignInstallationOpen(true);
+                      }}
+                    />
+                    <SignInstallationModal
+                      open={signInstallationOpen}
+                      onOpenChange={setSignInstallationOpen}
+                      status={signInstallationStatus}
+                      orderId="#124544"
+                      scheduledDate="25-02-2026"
+                      address="1600 Pennsylvania Avenue NW, Washington, DC 20500"
+                      unitApt="205"
+                      id="50"
+                      dueDate="20/05/2026"
+                      occupant="Nm sujon"
+                      note="Please install the post as soon as possible"
+                      propertyType="Duplex"
+                      whereToPlace="In front of the house"
+                      gateCode="In front of the house"
+                      addressConfirmed="Accurate"
+                      lockbox="24564556"
+                      siteWarnings={[
+                        "1. Underground sprinkler system",
+                        "2. Restricted/gated access",
+                      ]}
+                      addOnServices={[
+                        "1. Underground sprinkler system",
+                        "2. Restricted/gated access",
+                      ]}
+                      installer={
+                        signInstallationStatus === "Completed"
+                          ? {
+                              name: "Nm Sujon",
+                              avatar:
+                                "https://api.dicebear.com/7.x/avataaars/svg?seed=Nm",
+                            }
+                          : undefined
+                      }
+                      postType="3 feet, steel metal frame, black"
+                      installType="Single install"
+                      riderSize='24x48"'
+                      riderMaterial="ABS"
+                      mainPanelSize='24x30"'
+                      mainPanelMaterial="ABS"
+                      propertyImages={[
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=300&h=200&fit=crop",
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=300&h=200&fit=crop",
+                        "https://images.unsplash.com/photo-1600566753376-12c8ab7d1c0e?w=300&h=200&fit=crop",
+                      ]}
+                      completionImages={
+                        signInstallationStatus === "Completed"
+                          ? [
+                              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=100&h=100&fit=crop",
+                              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=100&h=100&fit=crop",
+                              "https://images.unsplash.com/photo-1600566753376-12c8ab7d1c0e?w=100&h=100&fit=crop",
+                            ]
+                          : undefined
+                      }
+                      priceBreakdown={[
+                        { label: "Post install", value: "$50.00" },
+                        { label: "Total", value: "$50.00" },
+                      ]}
                     />
                   </TableCell>
                 </TableRow>
