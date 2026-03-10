@@ -19,7 +19,6 @@ import {
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
 import { ISubscriber } from "@/types/subscriber.type";
-import { Eye } from "lucide-react";
 import PlanBadge from "../badge/PlanBadge";
 import ViewSubscriberModal from "../modal/subscriber/ViewSubscriberModal";
 import DeleteSubscriberModal from "../modal/subscriber/DeleteSubscriberModal";
@@ -76,7 +75,6 @@ const SubscriberTable = ({
                           height={36}
                           className="rounded-full"
                         />
-
                         <span className="font-medium">{subscriber.name}</span>
                       </div>
                     </TableCell>
