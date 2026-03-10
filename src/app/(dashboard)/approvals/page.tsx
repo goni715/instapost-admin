@@ -1,8 +1,13 @@
+import ApprovalList from "@/components/approval/ApprovalList";
 
 const ApprovalsPage = () => {
   return (
-    <div>ApprovalsPage</div>
-  )
-}
+    <>
+      <div className="min-h-full bg-white rounded-md shadow-md p-4">
+        <ApprovalList />
+      </div>
+    </>
+  );
+};
 
-export default ApprovalsPage
+export default ApprovalsPage;
