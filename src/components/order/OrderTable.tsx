@@ -20,7 +20,7 @@ import {
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
 import { IOrder } from "@/types/order.type";
 import { Eye } from "lucide-react";
-import OrderStatusBadge from "../badge/OrderStatusBadge";
+import ChangeOrderStatusModal from "../modal/order/ChangeOrderStatusModal";
 
 type TProps = {
   orders: IOrder[];
@@ -101,9 +101,8 @@ const OrderTable = ({
                   <TableCell className="text-blue-600 font-medium">
                     {order.price}
                   </TableCell>
-
                   <TableCell>
-                    <OrderStatusBadge status={order.status} />
+                    <ChangeOrderStatusModal currentStatus={order.status} />
                   </TableCell>
 
                   <TableCell>

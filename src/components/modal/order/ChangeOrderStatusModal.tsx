@@ -4,27 +4,23 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TOrderStatus } from "@/types/order.type";
+import { STATUS_ACTIONS } from "@/data/order.data";
+import { SuccessToast } from "@/helpers/ValidationHelper";
+import OrderStatusBadge from "@/components/badge/OrderStatusBadge";
 
 type TProps = {
-  status: TOrderStatus;
+  currentStatus: TOrderStatus;
 };
 
-const ChangeOrderStatusModal = ({ userId }: TProps) => {
+const ChangeOrderStatusModal = ({ currentStatus }: TProps) => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleStatusUpdate = async (newStatus: OrderStatus) => {
-    setIsLoading(true);
-    try {
-      // Call your API here to update the status
-      onStatusChange(newStatus);
-      onOpenChange(false);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleStatusUpdate = async (newStatus: TOrderStatus) => {
+    SuccessToast(newStatus);
+    setModalOpen(false);
   };
 
   // Filter out the current status from available actions
@@ -34,13 +30,13 @@ const ChangeOrderStatusModal = ({ userId }: TProps) => {
 
   return (
     <>
-      <Trash2
+      <OrderStatusBadge
+        status={currentStatus}
         onClick={() => setModalOpen(true)}
-        className="h-6 w-4 text-red-600 hover:text-red-700 cursor-pointer"
       />
 
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
-        <DialogContent className="sm:max-w-md" showCloseButton={false}>
+        <DialogContent className="sm:max-w-md" showCloseButton={true}>
           <DialogHeader>
             <DialogTitle className="text-center text-lg font-semibold">
               Update Order Status
@@ -52,8 +48,7 @@ const ChangeOrderStatusModal = ({ userId }: TProps) => {
               <Button
                 key={action.status}
                 onClick={() => handleStatusUpdate(action.status)}
-                disabled={isLoading}
-                className={`h-14 text-white font-medium text-base rounded-lg transition-all ${action.bgColor} ${action.hoverColor}`}
+                className={`h-12 text-white font-medium text-base rounded-lg cursor-pointer transition-all ${action.bgColor} ${action.hoverColor}`}
               >
                 {action.label}
               </Button>

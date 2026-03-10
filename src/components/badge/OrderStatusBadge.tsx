@@ -23,7 +23,12 @@ const STATUS_ICON: Record<string, JSX.Element | null> = {
   Canceled: null,
 };
 
-const OrderStatusBadge = ({ status }: { status: TOrderStatus }) => {
+type TProps = {
+  status: TOrderStatus;
+  onClick: () => void;
+};
+
+const OrderStatusBadge = ({ status, onClick }: TProps) => {
   const Icon = STATUS_ICON[status];
 
   return (
@@ -31,6 +36,8 @@ const OrderStatusBadge = ({ status }: { status: TOrderStatus }) => {
       className={`px-3 py-1 text-xs rounded-md font-medium flex items-center ${
         STATUS_STYLE[status]
       }`}
+      onClick={onClick}
+      disabled={status==="Completed" || status==="Canceled"}
     >
       {Icon}
       {status}
