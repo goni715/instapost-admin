@@ -13,14 +13,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import CreateUserModal from "../modal/user/CreateUserModal";
 import ApprovalTable from "./ApprovalTable";
 
 const ApprovalList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-  const [status, setStatus] = useState("");
+  const [role, setRole] = useState("");
 
   const {} = useDebounce({ searchQuery, setCurrentPage });
 
@@ -65,9 +64,9 @@ const ApprovalList = () => {
         leftField={
           <>
             <Select
-              value={status === "all" ? "" : status}
+              value={role === "all" ? "" : role}
               onValueChange={(val) => {
-                setStatus(val);
+                setRole(val);
                 setCurrentPage(1);
               }}
             >
@@ -87,9 +86,7 @@ const ApprovalList = () => {
             </Select>
           </>
         }
-      >
-        <CreateUserModal />
-      </ListHeader>
+      ></ListHeader>
 
       <div className="relative">
         {content}

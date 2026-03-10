@@ -1,8 +1,11 @@
+import SubscriberList from "@/components/subscriber/SubscriberList";
 
 const SubscribersPage = () => {
   return (
-    <div>SubscribersPage</div>
-  )
-}
+    <div className="min-h-full bg-white rounded-md shadow-md p-4">
+      <SubscriberList />
+    </div>
+  );
+};
 
-export default SubscribersPage
+export default SubscribersPage;
