@@ -8,8 +8,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { TOrderStatus } from "@/types/order.type";
 import { STATUS_ACTIONS } from "@/data/order.data";
-import { SuccessToast } from "@/helpers/ValidationHelper";
 import OrderStatusBadge from "@/components/badge/OrderStatusBadge";
+import AssignInstallerModal from "./AssignInstallerModal";
+import MakeScheduleModal from "./MakeScheduleModal";
 
 type TProps = {
   currentStatus: TOrderStatus;
@@ -17,10 +18,19 @@ type TProps = {
 
 const ChangeOrderStatusModal = ({ currentStatus }: TProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [installerModalOpen, setInstallerModalOpen] = useState(false);
+  const [scheduledModalOpen, setScheduledModalOpen] = useState(false);
 
   const handleStatusUpdate = async (newStatus: TOrderStatus) => {
-    SuccessToast(newStatus);
     setModalOpen(false);
+    if (newStatus === "Assigned") {
+      setInstallerModalOpen(true);
+      return;
+    }
+    if (newStatus === "Scheduled") {
+      setScheduledModalOpen(true);
+      return;
+    }
   };
 
   // Filter out the current status from available actions
@@ -61,6 +71,15 @@ const ChangeOrderStatusModal = ({ currentStatus }: TProps) => {
           </div>
         </DialogContent>
       </Dialog>
+
+      <AssignInstallerModal
+        installerModalOpen={installerModalOpen}
+        setInstallerModalOpen={setInstallerModalOpen}
+      />
+      <MakeScheduleModal
+        scheduledModalOpen={scheduledModalOpen}
+        setScheduledModalOpen={setScheduledModalOpen}
+      />
     </>
   );
 };
