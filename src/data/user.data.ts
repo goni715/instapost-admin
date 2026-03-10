@@ -244,3 +244,23 @@ export const DUMMY_ASSISTANT = {
     { label: "Office", value: "Real estate office" },
   ],
 };
+
+export const DUMMY_COMPANY = {
+  name: "Inseasign Tracker",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  location: "Alabama, USA",
+  plan: "Premium plan",
+  stats: [
+    { label: "Total Orders", value: "50" },
+    { label: "Inventory Item", value: "100" },
+    { label: "Completed Order", value: "50" },
+    { label: "Total Staff", value: "50" },
+  ],
+  accountOwner: {
+    name: "NM sujon",
+    email: "jhon@gmail.com",
+    phone: "+78765569900064",
+    initials: "NM",
+  },
+};

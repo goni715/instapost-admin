@@ -27,10 +27,12 @@ import ViewAgentModal from "../modal/user/ViewUserModal";
 import {
   DUMMUY_AGENT,
   DUMMY_ASSISTANT,
+  DUMMY_COMPANY,
   DUMMY_INSTALLER,
   DUMMY_TEAM_LEAD,
   DUMMY_WARE_HOUSE,
 } from "@/data/user.data";
+import ViewCompanyModal from "../modal/user/ViewCompanyModal";
 
 type TProps = {
   users: IUser[];
@@ -134,6 +136,9 @@ const UserTable = ({
                         )}
                         {user.role === "Assistant" && (
                           <ViewAgentModal user={DUMMY_ASSISTANT} />
+                        )}
+                        {user.role === "Sign company" && (
+                          <ViewCompanyModal company={DUMMY_COMPANY} />
                         )}
                         <EditUserModal />
                         <DeleteUserModal userId={user.id} />

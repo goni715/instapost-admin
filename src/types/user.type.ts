@@ -22,3 +22,23 @@ export type TViewUser = {
     value: string | number;
   }[];
 };
+
+export type TViewCompany = {
+  name: string;
+  logo?: string;
+  email: string;
+  phone: string;
+  location: string;
+  plan: string;
+  stats: {
+    label: string;
+    value: string | number;
+  }[];
+  accountOwner: {
+    name: string;
+    avatar?: string;
+    initials?: string;
+    email: string;
+    phone: string;
+  };
+};
