@@ -66,7 +66,7 @@ const EditUserModal = () => {
 
   return (
     <>
-       <Edit
+      <Edit
         onClick={() => setModalOpen(true)}
         className="h-6 w-4 text-green-600 hover:text-green-700 cursor-pointer"
       />

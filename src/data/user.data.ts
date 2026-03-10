@@ -1,4 +1,4 @@
-import { IUser } from "@/types/user.type";
+import { IUser, TViewUser } from "@/types/user.type";
 
 export const DUMMY_USERS: IUser[] = [
   {
@@ -180,3 +180,67 @@ export const ROLE_OPTIONS = [
   { label: "Warehouse manger", value: "Warehouse manger" },
   { label: "Sign company", value: "Sign company" },
 ];
+
+export const DUMMUY_AGENT: TViewUser = {
+  name: "Nm Sujon",
+  role: "Agent",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  initials: "NS",
+  stats: [
+    { label: "Total Orders", value: "50" },
+    { label: "Assistant", value: "1" },
+    { label: "Office", value: "Real estate office" },
+    { label: "Brokerage", value: "Brokerage office" },
+  ],
+};
+
+export const DUMMY_TEAM_LEAD = {
+  name: "Nm Sujon",
+  role: "Team Lead",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  initials: "NS",
+  stats: [
+    { label: "Total Orders", value: "50" },
+    { label: "Total Agent", value: "10" },
+    { label: "Inventory Items", value: "100" },
+    { label: "Office", value: "Real estate office" },
+    { label: "Brokerage", value: "Brokerage office" },
+  ],
+};
+
+export const DUMMY_WARE_HOUSE = {
+  name: "Nm Sujon",
+  role: "Warehouse manger",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  initials: "NS",
+  stats: [{ label: "Warehouse", value: "Warehouse-01" }],
+};
+
+export const DUMMY_INSTALLER = {
+  name: "Nm Sujon",
+  role: "Installer",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  initials: "NS",
+  stats: [
+    { label: "Total Orders", value: "50" },
+    { label: "Total Completed", value: "10" },
+    { label: "Warehouse", value: "Warehouse-01" },
+  ],
+};
+
+export const DUMMY_ASSISTANT = {
+  name: "Nm Sujon",
+  role: "Assistant",
+  email: "jhon@gmail.com",
+  phone: "+78765569900064",
+  initials: "NS",
+  stats: [
+    { label: "Total Orders", value: "50" },
+    { label: "Agent", value: "Sujon" },
+    { label: "Office", value: "Real estate office" },
+  ],
+};

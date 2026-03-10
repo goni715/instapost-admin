@@ -23,6 +23,14 @@ import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
 import { IUser } from "@/types/user.type";
 import EditUserModal from "../modal/user/EditUserModal";
 import DeleteUserModal from "../modal/user/DeleteUserModal";
+import ViewAgentModal from "../modal/user/ViewUserModal";
+import {
+  DUMMUY_AGENT,
+  DUMMY_ASSISTANT,
+  DUMMY_INSTALLER,
+  DUMMY_TEAM_LEAD,
+  DUMMY_WARE_HOUSE,
+} from "@/data/user.data";
 
 type TProps = {
   users: IUser[];
@@ -111,10 +119,22 @@ const UserTable = ({
                     </TableCell>
 
                     <TableCell>
-                      <div
-                        className="flex items-center gap-2"
-                        key={user.id}
-                      >
+                      <div className="flex items-center gap-2" key={user.id}>
+                        {user.role === "Agent" && (
+                          <ViewAgentModal user={DUMMUY_AGENT} />
+                        )}
+                        {user.role === "Team Lead" && (
+                          <ViewAgentModal user={DUMMY_TEAM_LEAD} />
+                        )}
+                        {user.role === "Warehouse manager" && (
+                          <ViewAgentModal user={DUMMY_WARE_HOUSE} />
+                        )}
+                        {user.role === "Installer" && (
+                          <ViewAgentModal user={DUMMY_INSTALLER} />
+                        )}
+                        {user.role === "Assistant" && (
+                          <ViewAgentModal user={DUMMY_ASSISTANT} />
+                        )}
                         <EditUserModal />
                         <DeleteUserModal userId={user.id} />
                       </div>

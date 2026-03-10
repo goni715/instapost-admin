@@ -9,3 +9,16 @@ export interface IUser {
   joinDate: string;
   image?: string;
 }
+
+export type TViewUser = {
+  name: string;
+  role: string;
+  email: string;
+  phone: string;
+  avatar?: string;
+  initials?: string;
+  stats: {
+    label: string;
+    value: string | number;
+  }[];
+};
