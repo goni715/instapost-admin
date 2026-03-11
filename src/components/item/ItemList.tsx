@@ -7,8 +7,7 @@ import ListLoading from "../loader/ListLoading";
 import TableOverlayLoading from "../loader/TableOverlayLoading";
 import { DUMMY_ITEMS, ITEM_META_DATA } from "@/data/item.data";
 import ItemTable from "./ItemTable";
-
-
+import CreateItemModal from "../modal/item/CreateItemModal";
 
 const ItemList = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -55,7 +54,9 @@ const ItemList = () => {
         setSearchQuery={setSearchQuery}
         isLoading={isLoading}
         isFetching={isFetching}
-      />
+      >
+        <CreateItemModal />
+      </ListHeader>
 
       <div className="relative">
         {content}

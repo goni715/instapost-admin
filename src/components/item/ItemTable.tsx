@@ -19,8 +19,9 @@ import {
 } from "../ui/select";
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
-import { Eye, Trash2 } from "lucide-react";
 import { IItem } from "@/data/item.data";
+import DeleteItemModal from "../modal/item/DeleteItemModal";
+import EditItemModal from "../modal/item/EditItemModal";
 
 type TProps = {
   items: IItem[];
@@ -48,6 +49,7 @@ const ItemTable = ({
           <Table className="min-w-200">
             <TableHeader className="sticky top-0 z-20 bg-blue-50 border-b">
               <TableRow>
+                <TableHead>S.N.</TableHead>
                 <TableHead>Name</TableHead>
                 <TableHead>Action</TableHead>
               </TableRow>
@@ -55,20 +57,16 @@ const ItemTable = ({
 
             <TableBody>
               {items.length > 0 ? (
-                items.map((item) => (
+                items.map((item, index) => (
                   <TableRow key={item.id}>
+                    <TableCell className="text-muted-foreground">
+                      {Number(index + 1) + (meta?.page - 1) * pageSize}
+                    </TableCell>
                     <TableCell className="font-medium">{item.name}</TableCell>
-
                     <TableCell>
                       <div className="flex items-center gap-3">
-                        <Eye
-                          size={18}
-                          className="cursor-pointer text-muted-foreground"
-                        />
-                        <Trash2
-                          size={18}
-                          className="cursor-pointer text-red-500"
-                        />
+                        <EditItemModal/>
+                        <DeleteItemModal itemId={item.id} />
                       </div>
                     </TableCell>
                   </TableRow>

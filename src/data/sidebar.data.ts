@@ -61,8 +61,8 @@ export const menuItems = [
     icon: Tag,
     submenu: [
       {
-        title: "Item",
-        href: "/item",
+        title: "Items",
+        href: "/items",
       },
       {
         title: "Material",
