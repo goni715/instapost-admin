@@ -1,9 +1,13 @@
-import React from 'react'
+import InstallerChargeList from "@/components/installerCharge/InstallerChargeList";
 
 const InstallerChargePage = () => {
   return (
-    <div>InstallerChargePage</div>
-  )
-}
+    <>
+      <div className="min-h-full bg-white rounded-md shadow-md p-4">
+        <InstallerChargeList />
+      </div>
+    </>
+  );
+};
 
-export default InstallerChargePage
+export default InstallerChargePage;
