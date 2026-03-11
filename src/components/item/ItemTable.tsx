@@ -19,12 +19,11 @@ import {
 } from "../ui/select";
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
-import { Eye } from "lucide-react";
-import { IInvoice } from "@/types/invoice.type";
-
+import { Eye, Trash2 } from "lucide-react";
+import { IItem } from "@/data/item.data";
 
 type TProps = {
-  invoices: IInvoice[];
+  items: IItem[];
   meta: IMeta;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -32,8 +31,8 @@ type TProps = {
   setPageSize: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const InvoiceTable = ({
-  invoices,
+const ItemTable = ({
+  items,
   meta,
   currentPage,
   setCurrentPage,
@@ -49,63 +48,35 @@ const InvoiceTable = ({
           <Table className="min-w-200">
             <TableHeader className="sticky top-0 z-20 bg-blue-50 border-b">
               <TableRow>
-                <TableHead>S.N.</TableHead>
-                <TableHead>Invoice no</TableHead>
-                <TableHead>Order id</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Order Date</TableHead>
-                <TableHead>Payment</TableHead>
+                <TableHead>Name</TableHead>
                 <TableHead>Action</TableHead>
               </TableRow>
             </TableHeader>
 
             <TableBody>
-              {invoices.length > 0 ? (
-                invoices.map((invoice, index) => (
-                  <TableRow key={invoice.id}>
-                    <TableCell className="w-16 text-muted-foreground">
-                      {Number(index + 1) + (meta?.page - 1) * pageSize}
-                    </TableCell>
-                    <TableCell className="text-muted-foreground">
-                      {invoice.invoiceNo}
-                    </TableCell>
-
-                    <TableCell className="text-muted-foreground">
-                      {invoice.orderId}
-                    </TableCell>
-
-                    <TableCell className="text-muted-foreground">
-                      {invoice.type}
-                    </TableCell>
-
-                    <TableCell className="text-muted-foreground">
-                      {invoice.orderDate}
-                    </TableCell>
+              {items.length > 0 ? (
+                items.map((item) => (
+                  <TableRow key={item.id}>
+                    <TableCell className="font-medium">{item.name}</TableCell>
 
                     <TableCell>
-                      <span
-                        className={`text-sm font-medium ${
-                          invoice.payment === "Paid"
-                            ? "text-green-500"
-                            : "text-gray-500"
-                        }`}
-                      >
-                        {invoice.payment}
-                      </span>
-                    </TableCell>
-
-                    <TableCell>
-                      <Eye
-                        size={18}
-                        className="cursor-pointer text-muted-foreground"
-                      />
+                      <div className="flex items-center gap-3">
+                        <Eye
+                          size={18}
+                          className="cursor-pointer text-muted-foreground"
+                        />
+                        <Trash2
+                          size={18}
+                          className="cursor-pointer text-red-500"
+                        />
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center py-10">
-                    No invoices found
+                  <TableCell colSpan={2} className="text-center py-10">
+                    No items found
                   </TableCell>
                 </TableRow>
               )}
@@ -114,23 +85,22 @@ const InvoiceTable = ({
         </div>
       </div>
 
-      {invoices.length > pageSize && (
+      {items.length > pageSize && (
         <div className="mt-6 rounded-lg border border-border bg-card p-4 flex flex-col space-y-4 md:space-y-0 items-center md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-muted-foreground">
             Showing
             <span className="font-medium ml-1">
-              {startIndex + 1}-
-              {Math.min(startIndex + pageSize, invoices.length)}
+              {startIndex + 1}-{Math.min(startIndex + pageSize, items.length)}
             </span>
             of
-            <span className="font-medium ml-1">{invoices.length}</span>
+            <span className="font-medium ml-1">{items.length}</span>
           </p>
 
           <CustomPagination
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             totalPages={meta.totalPages}
-            dataLength={invoices.length}
+            dataLength={items.length}
           />
 
           <Select
@@ -158,4 +128,4 @@ const InvoiceTable = ({
   );
 };
 
-export default InvoiceTable;
+export default ItemTable;
