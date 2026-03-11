@@ -65,8 +65,8 @@ export const menuItems = [
         href: "/items",
       },
       {
-        title: "Material",
-        href: "/material",
+        title: "Materials",
+        href: "/materials",
       },
       {
         title: "Option",
