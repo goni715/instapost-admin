@@ -1,10 +1,12 @@
-import { RefreshCw, Search } from "lucide-react";
+import { ArrowLeft, RefreshCw, Search } from "lucide-react";
 import { Input } from "../ui/input";
 import type React from "react";
+import { useRouter } from "next/navigation";
 
 type TProps = {
   total: number;
   title: string;
+  backButton?: boolean;
   searchQuery?: string;
   setSearchQuery?: React.Dispatch<React.SetStateAction<string>>;
   children?: React.ReactNode;
@@ -17,6 +19,7 @@ type TProps = {
 const ListHeader = ({
   total,
   title,
+  backButton = false,
   searchQuery,
   setSearchQuery,
   children,
@@ -25,11 +28,18 @@ const ListHeader = ({
   isLoading,
   leftField,
 }: TProps) => {
+  const router = useRouter();
   return (
     <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto] md:items-center">
       {/* LEFT: Title + Total */}
       <div className="flex justify-between items-start md:flex-col lg:flex-row lg:items-center lg:justify-start gap-6">
-        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 text-nowrap">
+        <h1 className="text-xl flex items-center gap-2 sm:text-2xl font-semibold text-gray-900 text-nowrap">
+          {backButton && (
+            <ArrowLeft
+              onClick={() => router.back()}
+              className="cursor-pointer"
+            />
+          )}
           {title}
         </h1>
 

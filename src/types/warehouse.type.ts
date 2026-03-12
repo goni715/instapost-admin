@@ -3,3 +3,9 @@ export interface IWarehouse {
   name: string;
   location: string;
 }
+
+export interface ISingleWarehouse {
+  id: string;
+  name: string;
+  designation: string;
+}

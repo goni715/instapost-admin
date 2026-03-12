@@ -19,14 +19,11 @@ import {
 } from "../ui/select";
 
 import { PAGE_SIZE_OPTIONS } from "@/constants/global.constant";
-import { IWarehouse } from "@/types/warehouse.type";
+import { ISingleWarehouse } from "@/types/warehouse.type";
 import DeleteWarehouseModal from "../modal/warehouse/DeleteWarehouseModal";
-import EditWarehouseModal from "../modal/warehouse/EditWarehouseModal";
-import { Eye } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 type TProps = {
-  warehouses: IWarehouse[];
+  warehouses: ISingleWarehouse[];
   meta: IMeta;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -34,7 +31,7 @@ type TProps = {
   setPageSize: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const WarehouseTable = ({
+const WarehouseDetailsTable = ({
   warehouses,
   meta,
   currentPage,
@@ -43,7 +40,6 @@ const WarehouseTable = ({
   setPageSize,
 }: TProps) => {
   const startIndex = (currentPage - 1) * pageSize;
-  const router = useRouter();
 
   return (
     <>
@@ -54,7 +50,7 @@ const WarehouseTable = ({
               <TableRow>
                 <TableHead>S.N.</TableHead>
                 <TableHead>Name</TableHead>
-                {/* <TableHead>Price</TableHead> */}
+                <TableHead>Designation</TableHead>
                 <TableHead>Action</TableHead>
               </TableRow>
             </TableHeader>
@@ -70,19 +66,12 @@ const WarehouseTable = ({
                       {warehouse.name}
                     </TableCell>
 
-                    {/* <TableCell className="text-muted-foreground">
-                      ${warehouse.price}
-                    </TableCell> */}
+                    <TableCell className="text-muted-foreground">
+                      {warehouse.designation}
+                    </TableCell>
 
                     <TableCell>
-                      <div className="flex items-center gap-3">
-                        <Eye
-                          onClick={()=>router.push(`/warehouse/${warehouse.id}`)}
-                          className="h-6 w-4 text-gray-600 hover:text-gray-700 cursor-pointer"
-                        />
-                        <EditWarehouseModal />
                         <DeleteWarehouseModal warehouseId={warehouse.id} />
-                      </div>
                     </TableCell>
                   </TableRow>
                 ))
@@ -142,4 +131,4 @@ const WarehouseTable = ({
   );
 };
 
-export default WarehouseTable;
+export default WarehouseDetailsTable;
