@@ -4,9 +4,9 @@ import { useState, type ReactNode } from "react";
 import ListHeader from "../common/ListHeader";
 import ListLoading from "../loader/ListLoading";
 import TableOverlayLoading from "../loader/TableOverlayLoading";
-import CreateWarehouseModal from "../modal/warehouse/CreateWarehouseModal";
 import WarehouseDetailsTable from "./WarehouseDetailsTable";
 import { DUMMY_SINGLE_WAREHOUSE_DATA, SINGLE_WAREHOUSE_META_DATA } from "@/data/warehouse.data";
+import AssignStaffModal from "../modal/warehouse/AssignStaffModal";
 
 const WarehouseDetailsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,7 +51,7 @@ const WarehouseDetailsList = () => {
         isLoading={isLoading}
         isFetching={isFetching}
       >
-        <CreateWarehouseModal />
+        <AssignStaffModal />
       </ListHeader>
 
       <div className="relative">
