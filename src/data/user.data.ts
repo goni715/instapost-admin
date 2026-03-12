@@ -7,7 +7,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Agent",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "2",
@@ -15,7 +15,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Team Lead",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "3",
@@ -23,7 +23,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Assistant",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "4",
@@ -31,7 +31,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Installer",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "5",
@@ -39,7 +39,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Warehouse manager",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "6",
@@ -47,17 +47,15 @@ export const DUMMY_USERS: IUser[] = [
     email: "nsujon8@gmail.com",
     role: "Sign company",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
-
-  // repeat pattern to reach 20
   {
     id: "7",
     name: "John Carter",
     email: "john@gmail.com",
     role: "Agent",
     phone: "+880171234567",
-    joinDate: "19-02-2026",
+    joinDate: "02/19/2026",
   },
   {
     id: "8",
@@ -65,7 +63,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "sarah@gmail.com",
     role: "Assistant",
     phone: "+880171234568",
-    joinDate: "18-02-2026",
+    joinDate: "02/18/2026",
   },
   {
     id: "9",
@@ -73,7 +71,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "michael@gmail.com",
     role: "Team Lead",
     phone: "+880171234569",
-    joinDate: "18-02-2026",
+    joinDate: "02/18/2026",
   },
   {
     id: "10",
@@ -81,7 +79,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "daniel@gmail.com",
     role: "Installer",
     phone: "+880171234560",
-    joinDate: "17-02-2026",
+    joinDate: "02/17/2026",
   },
   {
     id: "11",
@@ -89,7 +87,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "emma@gmail.com",
     role: "Agent",
     phone: "+880171234561",
-    joinDate: "16-02-2026",
+    joinDate: "02/16/2026",
   },
   {
     id: "12",
@@ -97,7 +95,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "olivia@gmail.com",
     role: "Assistant",
     phone: "+880171234562",
-    joinDate: "15-02-2026",
+    joinDate: "02/15/2026",
   },
   {
     id: "13",
@@ -105,7 +103,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "james@gmail.com",
     role: "Team Lead",
     phone: "+880171234563",
-    joinDate: "15-02-2026",
+    joinDate: "02/15/2026",
   },
   {
     id: "14",
@@ -113,7 +111,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "liam@gmail.com",
     role: "Installer",
     phone: "+880171234564",
-    joinDate: "14-02-2026",
+    joinDate: "02/14/2026",
   },
   {
     id: "15",
@@ -121,7 +119,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "sophia@gmail.com",
     role: "Agent",
     phone: "+880171234565",
-    joinDate: "13-02-2026",
+    joinDate: "02/13/2026",
   },
   {
     id: "16",
@@ -129,7 +127,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "noah@gmail.com",
     role: "Warehouse manager",
     phone: "+880171234566",
-    joinDate: "13-02-2026",
+    joinDate: "02/13/2026",
   },
   {
     id: "17",
@@ -137,7 +135,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "lucas@gmail.com",
     role: "Assistant",
     phone: "+880171234567",
-    joinDate: "12-02-2026",
+    joinDate: "02/12/2026",
   },
   {
     id: "18",
@@ -145,7 +143,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "mia@gmail.com",
     role: "Agent",
     phone: "+880171234568",
-    joinDate: "11-02-2026",
+    joinDate: "02/11/2026",
   },
   {
     id: "19",
@@ -153,7 +151,7 @@ export const DUMMY_USERS: IUser[] = [
     email: "ethan@gmail.com",
     role: "Installer",
     phone: "+880171234569",
-    joinDate: "10-02-2026",
+    joinDate: "02/10/2026",
   },
   {
     id: "20",
@@ -161,10 +159,9 @@ export const DUMMY_USERS: IUser[] = [
     email: "ava@gmail.com",
     role: "Sign company",
     phone: "+880171234570",
-    joinDate: "09-02-2026",
+    joinDate: "02/09/2026",
   },
 ];
-
 export const USER_META_DATA = {
   page: 1,
   limit: 10,

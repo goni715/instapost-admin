@@ -1,5 +1,4 @@
 import { ISubscriber } from "@/types/subscriber.type";
-
 export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
   {
     id: "1",
@@ -7,7 +6,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "alex.johnson@gmail.com",
     plan: "Premium",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "2",
@@ -15,7 +14,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "david.miller@gmail.com",
     plan: "Gold",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "3",
@@ -23,7 +22,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "ryan.walker@gmail.com",
     plan: "Basic",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "4",
@@ -31,7 +30,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "kevin.turner@gmail.com",
     plan: "Premium",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "5",
@@ -39,7 +38,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "brian.scott@gmail.com",
     plan: "Gold",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "6",
@@ -47,7 +46,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "instasigntracker@gmail.com",
     plan: "Basic",
     phone: "+8564564654",
-    joinDate: "20-02-2026",
+    joinDate: "02/20/2026",
   },
   {
     id: "7",
@@ -55,7 +54,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "john@gmail.com",
     plan: "Premium",
     phone: "+880171234567",
-    joinDate: "19-02-2026",
+    joinDate: "02/19/2026",
   },
   {
     id: "8",
@@ -63,7 +62,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "sarah@gmail.com",
     plan: "Gold",
     phone: "+880171234568",
-    joinDate: "18-02-2026",
+    joinDate: "02/18/2026",
   },
   {
     id: "9",
@@ -71,7 +70,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "michael@gmail.com",
     plan: "Basic",
     phone: "+880171234569",
-    joinDate: "18-02-2026",
+    joinDate: "02/18/2026",
   },
   {
     id: "10",
@@ -79,7 +78,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "daniel@gmail.com",
     plan: "Premium",
     phone: "+880171234560",
-    joinDate: "17-02-2026",
+    joinDate: "02/17/2026",
   },
   {
     id: "11",
@@ -87,7 +86,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "emma@gmail.com",
     plan: "Gold",
     phone: "+880171234561",
-    joinDate: "16-02-2026",
+    joinDate: "02/16/2026",
   },
   {
     id: "12",
@@ -95,7 +94,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "olivia@gmail.com",
     plan: "Basic",
     phone: "+880171234562",
-    joinDate: "15-02-2026",
+    joinDate: "02/15/2026",
   },
   {
     id: "13",
@@ -103,7 +102,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "james@gmail.com",
     plan: "Premium",
     phone: "+880171234563",
-    joinDate: "15-02-2026",
+    joinDate: "02/15/2026",
   },
   {
     id: "14",
@@ -111,7 +110,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "liam@gmail.com",
     plan: "Gold",
     phone: "+880171234564",
-    joinDate: "14-02-2026",
+    joinDate: "02/14/2026",
   },
   {
     id: "15",
@@ -119,7 +118,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "sophia@gmail.com",
     plan: "Basic",
     phone: "+880171234565",
-    joinDate: "13-02-2026",
+    joinDate: "02/13/2026",
   },
   {
     id: "16",
@@ -127,7 +126,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "noah@gmail.com",
     plan: "Premium",
     phone: "+880171234566",
-    joinDate: "13-02-2026",
+    joinDate: "02/13/2026",
   },
   {
     id: "17",
@@ -135,7 +134,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "lucas@gmail.com",
     plan: "Gold",
     phone: "+880171234567",
-    joinDate: "12-02-2026",
+    joinDate: "02/12/2026",
   },
   {
     id: "18",
@@ -143,7 +142,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "mia@gmail.com",
     plan: "Basic",
     phone: "+880171234568",
-    joinDate: "11-02-2026",
+    joinDate: "02/11/2026",
   },
   {
     id: "19",
@@ -151,7 +150,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "ethan@gmail.com",
     plan: "Premium",
     phone: "+880171234569",
-    joinDate: "10-02-2026",
+    joinDate: "02/10/2026",
   },
   {
     id: "20",
@@ -159,7 +158,7 @@ export const DUMMY_SUBSCRIBERS: ISubscriber[] = [
     email: "ava@gmail.com",
     plan: "Gold",
     phone: "+880171234570",
-    joinDate: "09-02-2026",
+    joinDate: "02/09/2026",
   },
 ];
 

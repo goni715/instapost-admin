@@ -1,8 +1,13 @@
+import TripChargeList from "@/components/tripCharge/TripChargeList";
 
 const TripChargePage = () => {
   return (
-    <div>TripCharge</div>
-  )
-}
+    <>
+      <div className="min-h-full bg-white rounded-md shadow-md p-4">
+        <TripChargeList />
+      </div>
+    </>
+  );
+};
 
-export default TripChargePage
+export default TripChargePage;
