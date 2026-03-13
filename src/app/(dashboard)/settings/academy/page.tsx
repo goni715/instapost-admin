@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Pencil, Trash2, Plus } from "lucide-react";
+import { Trash2, Plus } from "lucide-react";
 import ListHeader from "@/components/common/ListHeader";
-import CreateOptionModal from "@/components/modal/option/CreateOptionModal";
+import CreateTopicModal from "@/components/modal/topic/CreateTopicModal";
+import EditTopicModal from "@/components/modal/topic/EditTopicModal";
 
 interface Topic {
   id: string;
@@ -17,13 +18,37 @@ const AcademyPage = () => {
   const [topics, setTopics] = useState<Topic[]>([
     {
       id: "1",
-      title: "Order",
+      title: "Order-1",
       description:
         "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
     },
     {
       id: "2",
-      title: "Order",
+      title: "Order-2",
+      description:
+        "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
+    },
+    {
+      id: "3",
+      title: "Topic-3",
+      description:
+        "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
+    },
+    {
+      id: "4",
+      title: "Topic-4",
+      description:
+        "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
+    },
+    {
+      id: "5",
+      title: "Topic-5",
+      description:
+        "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
+    },
+    {
+      id: "6",
+      title: "Topic-6",
       description:
         "There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have Suffered Alteration In Some Form, By Injected Humour, Or Randomised Words Which Don't Look Even Slightly Believable. If You Are Going To Use A",
     },
@@ -32,9 +57,6 @@ const AcademyPage = () => {
   const isLoading = false;
   const isFetching = false;
 
-  const handleEdit = (id: string) => {
-    console.log("Edit topic:", id);
-  };
 
   const handleDelete = (id: string) => {
     setTopics(topics.filter((topic) => topic.id !== id));
@@ -53,12 +75,12 @@ const AcademyPage = () => {
     <div className="min-h-screen bg-background p-4 sm:p-6 lg:p-8">
       <div className="">
         <ListHeader
-          title="Options"
+          title="Academy"
           total={topics.length || 0}
           isLoading={isLoading}
           isFetching={isFetching}
         >
-          <CreateOptionModal />
+          <CreateTopicModal />
         </ListHeader>
 
         {/* Topics Grid */}
@@ -74,13 +96,7 @@ const AcademyPage = () => {
                   {topic.title}
                 </h2>
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => handleEdit(topic.id)}
-                    className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
-                    aria-label="Edit"
-                  >
-                    <Pencil className="w-4 h-4 text-gray-600 dark:text-gray-400" />
-                  </button>
+                  <EditTopicModal/>
                   <button
                     onClick={() => handleDelete(topic.id)}
                     className="p-2 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
