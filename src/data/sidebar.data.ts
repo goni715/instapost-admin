@@ -10,6 +10,7 @@ import {
   Warehouse,
   Megaphone,
   ShoppingCart,
+  LineChart,
 } from "lucide-react";
 
 export const menuItems = [
@@ -104,6 +105,11 @@ export const menuItems = [
     title: "Announcement",
     href: "/announcements",
     icon: Megaphone,
+  },
+  {
+    title: "Brokerage",
+    href: "/brokerage",
+    icon: LineChart,
   },
   {
     title: "Settings",

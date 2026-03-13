@@ -1,8 +1,13 @@
+import BrokerageList from "@/components/brokerage/BrokerageList";
 
 const BrokeragePage = () => {
   return (
-    <div>BrokeragePage</div>
-  )
-}
+    <>
+      <div className="min-h-full bg-white rounded-md shadow-md p-4">
+        <BrokerageList />
+      </div>
+    </>
+  );
+};
 
-export default BrokeragePage
+export default BrokeragePage;
