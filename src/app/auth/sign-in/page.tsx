@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,10 +40,7 @@ export default function SignInPage() {
 
           {/* Logo/Brand */}
           <div className="flex items-center justify-center mb-8">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-2">
-              <span className="text-white font-bold text-lg">I</span>
-            </div>
-            <h1 className="text-xl font-bold text-primary">InstaSignTracker</h1>
+            <Image src="/logo.png" alt="logo" width={400} height={400} className="w-62.5"/>
           </div>
 
           {/* Title */}
