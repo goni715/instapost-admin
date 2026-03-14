@@ -41,7 +41,7 @@ const CreateFaqModal = () => {
             <div>
               <label className="text-sm font-medium mb-2 block">Question</label>
               <Input
-                placeholder="Enter the question"
+                placeholder="Enter the question..."
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
               />
@@ -49,7 +49,7 @@ const CreateFaqModal = () => {
             <div>
               <label className="text-sm font-medium mb-2 block">Answer</label>
               <Textarea
-                placeholder="Enter the answer"
+                placeholder="Enter the answer..."
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 rows={4}

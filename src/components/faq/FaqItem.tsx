@@ -4,7 +4,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { IFAQ } from "@/types/faq.type";
-import { Trash2, Pencil } from "lucide-react";
+import EditFaqModal from "../modal/faq/EditFaqModal";
+import DeleteFaqModal from "../modal/faq/DeleteFaqModal";
 
 type TProps = {
     faq: IFAQ;
@@ -26,18 +27,8 @@ const FaqItem = ({ faq, index }: TProps) => {
               Q:{String(index + 1).padStart(2, "0")}
             </span>
             <div className="flex gap-2">
-              <button
-                className="text-gray-400 hover:text-blue-500 transition-colors"
-                aria-label="Edit FAQ"
-              >
-                <Pencil className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
-              <button
-                className="text-gray-400 hover:text-red-500 transition-colors"
-                aria-label="Delete FAQ"
-              >
-                <Trash2 className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
+              <EditFaqModal/>
+              <DeleteFaqModal faqId={faq.id}/>
             </div>
           </div>
 

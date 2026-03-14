@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Edit } from "lucide-react";
 
-const CreateFaqModal = () => {
+const EditFaqModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
@@ -21,12 +22,13 @@ const CreateFaqModal = () => {
 
   return (
     <>
-      <Button
+      <button
         onClick={() => setModalOpen(true)}
-        className="bg-primary w-full sm:w-auto hover:bg-primary/90 text-white cursor-pointer"
+        className="text-green-600 hover:text-green-700 transition-colors"
+        aria-label="Edit FAQ"
       >
-        Add FAQ
-      </Button>
+        <Edit className="w-4 h-4 sm:w-5 sm:h-5" />
+      </button>
 
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         {/* Modal Content */}
@@ -35,7 +37,7 @@ const CreateFaqModal = () => {
           onInteractOutside={(e) => e.preventDefault()}
         >
           <DialogHeader>
-            <DialogTitle>Add FAQ</DialogTitle>
+            <DialogTitle>Edit FAQ</DialogTitle>
           </DialogHeader>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
@@ -71,11 +73,11 @@ const CreateFaqModal = () => {
                 Save Changes
               </Button>
             </div>
-          </form>
+          </form>                                                   
         </DialogContent>
       </Dialog>
     </>
   );
 };
 
-export default CreateFaqModal;
+export default EditFaqModal;
